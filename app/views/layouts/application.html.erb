@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>December</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 sidebar1">
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQfmm6JSpN1WoxcL0_RsV4MPdM4ztj2k_ARt8WsdsvswCpskMWh" class="img-responsive center-block" alt="Logo">
+                </div>
+                <br>
+                <div class="left-navigation">
+                    <ul class="list">
+                        <h5><strong>WHEREABOUTS</strong></h5>
+                        <li>Home</li>
+                      <li><a href="/members">Students</a></li>
+                        <li><a href="/school">School</a></li>
+                        <li>Gym</li>
+                        <li>Art Class</li>
+                        <li>Hike Club</li>
+                    </ul>
+
+                    <br>
+
+                    <ul class="list">
+                        <h5><strong>HOBBIES</strong></h5>
+                        <li>Hiking</li>
+                        <li>Rafting</li>
+                        <li>Badminton</li>
+                        <li>Tennis</li>
+                        <li>Sketching</li>
+                        <li></li>
+                        <a href="/users/sign_out">Sign Out</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-8 main-content">
+             <% if notice %>
+             <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-d
+            anger"><%= alert %></p>
+            <% end %>
+    <%= yield %>
+            <!--Main content code to be written here --> 
+            
+    </div>
+   
+  </body>
+</html>
+<style type="text/css">
+  .sidebar1 {
+    background: #F17153;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4a0e0e, #fb29ba, #ef0606);
+    /* Standard syntax */
+    padding: 0px;
+    min-height: 100%;
+}
+.logo {
+    max-height: 130px;
+}
+.logo>img {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 60%;
+    height: auto;
+  }
+.list {
+    color: #fff;
+    list-style: none;
+    padding-left: 0px;
+}
+.list::first-line {
+    color: rgba(255, 255, 255, 0.5);
+}
+.list> li, h5 {
+    padding: 5px 0px 5px 40px;
+}
+.list>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+    font-weight: bolder;
+    padding-left: 35px;
+}.main-content{
+text-align:center;
+}
+</style>
