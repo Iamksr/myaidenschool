@@ -1,0 +1,2 @@
+module MystreamsHelper
+end

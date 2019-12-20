@@ -1,0 +1,2 @@
+class Mystream < ApplicationRecord
+end

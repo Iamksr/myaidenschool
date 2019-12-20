@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mystreams
   resources :members
   devise_for :users
   root "members#school"

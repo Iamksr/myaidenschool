@@ -1,5 +1,5 @@
-<%= form_with(model: member, local: true) do |form| %>
-<% if member.errors.any? %>
+<%= form_with(model: mystream, local: true) do |form| %>
+<% if mystream.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
   <ul>
@@ -15,59 +15,26 @@
       <div class='col-md-12'>
         <div class="panel panel-default">
           <center>
-            <div class="panel-heading"><strong>New Student</strong></div>
+            <div class="panel-heading"><strong>OUR CLASSES</strong></div>
           </center>
           <div class="panel-body">
             <div class="card">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Student`s Name</p>
+                  <p>CLASS</p>
                   <ul class="selectors input-text">
                   <li><%= form.text_field :name, class: "form-control", min: 0%></li></ul>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Class</p>
+                  <p>Section</p>
                   <ul class="selectors input-text">
-                    <li> <%= form.collection_select :mystream_id, Mystream.order(:dept), :id, :dept, {prompt: "Select A Section"}, {class: "form-control"} %></li>
+                    <li> <%= form.text_field :dept, class: "form-control", min: 0 %></li>
                   </ul>
                 </div>
               </div>
-
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Class</p>
-                  <ul class="selectors input-text">
-                    <li> <%= form.collection_select :mystream_id, Mystream.order(:name), :id, :name, {prompt: "Select A Class"},class: "form-control"%></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Father`s Name</p>
-                  <ul class="selectors input-text">
-                    <li><%= form.text_field :father_name, class: "form-control", min: 0 %></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Address</p>
-                  <ul class="selectors input-text">
-                    <li><%= form.text_area :address, class: "form-control", min: 0 %></li>
-                  </ul>
-                </div>
-              </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Student`s Profile</p>
-                  <ul class="selectors input-text">
-                    <li><%= file_field :image, class: "form-control", min: 0 %></li>
-                  </ul>
-                </div>
-              </div>
+              
               <li></li>
             </div>
           </div>
@@ -77,14 +44,10 @@
   </div>
 </div>
 <div class="action">
-  <%= form.submit "Admission",class: "btn-hover color-signup" %>
+  <%= form.submit "Our Classes",class: "btn-hover color-signup" %>
 </div>
 <%end%>
-<script type="text/javascript">
-  $(document).ready(function() {            
-    $('input').attr('required', true);   
-  });
-</script>
+
 <style type="text/css">
   body{
       font-family: "Marvel", sans-serif;
