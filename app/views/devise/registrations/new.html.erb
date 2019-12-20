@@ -17,7 +17,9 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email ID", class: "form-control"%>
         <%= f.password_field :password, autocomplete: "new-password",placeholder: "Enter New Password", class: "form-control" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Confirm your Password", class: "form-control" %>
-      <button type="button" class="btn btn-default btn-block btn-custom">Sign Up</button>
+      <div class="action">
+      <%= f.submit "Sign Up",class: "btn-hover color-signup" %>
+    </div>
     </div>
     <%= render "devise/shared/links" %>
     <%end%><!-- /.controls -->
@@ -49,6 +51,44 @@ body, html {
   padding: 20px;
   z-index: 9999;
 }
+ .buttons {
+  margin: 10%;
+  text-align: center;
+  }
+  .btn-hover {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  }
+  .btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  }
+  .btn-hover:focus {
+  outline: none;
+  }
+  .btn-hover.color-signup {
+  background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
+  .form-control{
+  border-radius: 30px;
+  }
 #login-box .logo .logo-caption {
   font-family: 'Poiret One', cursive;
   color: white;
