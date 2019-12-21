@@ -1,13 +1,5 @@
  <head>
 
-  <!-- Style -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
-
-  <!-- Fonts and icons -->
-  <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
-  <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
-
   </head>
     <h10>Students Chart</h10>
       <div class="fresh-table full-color-orange">
@@ -24,7 +16,8 @@
     <thead>
       <th data-field="name">Student`s Name</th>
       <th data-field="father_name">Father`s Name</th>
-      <th data-field="section">Class</th>
+      <th data-field="class">Class</th>
+      <th data-field="section">Section</th>
       <th data-field="address">Address</th>
       <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
     </thead>
@@ -33,14 +26,18 @@
       <tr>
         <td><%=member.name%></td>
         <td><%=member.father_name%></td>
-        <td><%=member.section%></td>
+        <td><%=member.mystream.name%></td>
+        <td><%=member.mystream.dept%></td>
         <td><%=member.address%></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
       </tr>
      <% end %>
     </tbody>
   </table>
 </div>
+ <% if current_user.role == "admin" %>
 <%= link_to "Add New Student",new_member_path,class: "btn btn-danger"%>
+<%end %>
 <!-- Javascript -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -94,7 +91,7 @@
       striped: true,
       sortable: true,
       pageSize: 8,
-      pageList: [8, 10, 25, 50, 100],
+      pageList: [6, 8, 10, 25, 50, 100],
 
       formatShowingRows: function (pageFrom, pageTo, totalRows) {
         return ''
@@ -102,10 +99,6 @@
       formatRecordsPerPage: function (pageNumber) {
         return pageNumber + ' rows visible'
       }
-    })
-
-    $alertBtn.click(function () {
-      alert('You pressed on Alert')
     })
   })
 

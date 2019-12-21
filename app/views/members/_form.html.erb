@@ -26,14 +26,7 @@
                   <li><%= form.text_field :name, class: "form-control", min: 0%></li></ul>
                 </div>
               </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Class</p>
-                  <ul class="selectors input-text">
-                    <li> <%= form.collection_select :mystream_id, Mystream.order(:dept), :id, :dept, {prompt: "Select A Section"}, {class: "form-control"} %></li>
-                  </ul>
-                </div>
-              </div>
+             
 
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
@@ -41,6 +34,14 @@
                   <p>Class</p>
                   <ul class="selectors input-text">
                     <li> <%= form.collection_select :mystream_id, Mystream.order(:name), :id, :name, {prompt: "Select A Class"},class: "form-control"%></li>
+                  </ul>
+                </div>
+              </div>
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+                  <p>Section</p>
+                  <ul class="selectors input-text">
+                    <li> <%= form.collection_select :mystream_id, Mystream.order(:dept), :id, :dept, {prompt: "Select A Section"}, {class: "form-control"} %></li>
                   </ul>
                 </div>
               </div>
@@ -57,14 +58,6 @@
                   <p>Address</p>
                   <ul class="selectors input-text">
                     <li><%= form.text_area :address, class: "form-control", min: 0 %></li>
-                  </ul>
-                </div>
-              </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding select-room">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
-                  <p>Student`s Profile</p>
-                  <ul class="selectors input-text">
-                    <li><%= file_field :image, class: "form-control", min: 0 %></li>
                   </ul>
                 </div>
               </div>

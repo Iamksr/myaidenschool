@@ -70,6 +70,6 @@ class MembersController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :section, :father_name, :address, :image)
+      params.require(:member).permit(:name, :father_name, :address, :image, :mystream_id)
     end
 end
