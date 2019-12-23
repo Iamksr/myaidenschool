@@ -27,7 +27,7 @@
         <td><%=member.name%></td>
         <td><%=member.father_name%></td>
         <td><%=member.mystream.name%></td>
-        <td><%=member.mystream.dept%></td>
+        <td><%=member.devison.sec%></td>
         <td><%=member.address%></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
       </tr>
@@ -36,7 +36,7 @@
   </table>
 </div>
  <% if current_user.role == "admin" %>
-<%= link_to "Add New Student",new_member_path,class: "btn btn-danger"%>
+<%= link_to "Add New Student",new_member_path,class: "abc"%>
 <%end %>
 <!-- Javascript -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -251,6 +251,7 @@ h1 small{
 .fixed-plugin .badge-orange{
     background-color: #ffb33b;
 }
+
 
 .fixed-plugin .badge-red{
     background-color: #ED362C;

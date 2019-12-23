@@ -41,7 +41,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
                   <p>Section</p>
                   <ul class="selectors input-text">
-                    <li> <%= form.collection_select :mystream_id, Mystream.order(:dept), :id, :dept, {prompt: "Select A Section"}, {class: "form-control"} %></li>
+                    <li> <%= form.collection_select :devison_id, Devison.order(:sec), :id, :sec, {prompt: "Select A Section"}, {class: "form-control"} %></li>
                   </ul>
                 </div>
               </div>

@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_064536) do
+ActiveRecord::Schema.define(version: 2019_12_23_065003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "devisons", force: :cascade do |t|
+    t.string "sec"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "name"
@@ -24,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_21_064536) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
     t.integer "mystream_id"
+    t.integer "devison_id"
   end
 
   create_table "mystreams", force: :cascade do |t|

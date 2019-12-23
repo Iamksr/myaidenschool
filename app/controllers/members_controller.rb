@@ -36,7 +36,8 @@ class MembersController < ApplicationController
       end
     end
   end
-
+ def vip
+ end
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
@@ -70,6 +71,6 @@ class MembersController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :father_name, :address, :image, :mystream_id)
+      params.require(:member).permit(:name, :father_name, :address, :image, :mystream_id, :devison_id)
     end
 end

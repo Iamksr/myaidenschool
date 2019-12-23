@@ -1,0 +1,19 @@
+<%= form_with(model: devison, local: true) do |form| %>
+<% if devison.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(devison.errors.count, "error") %> prohibited this devison from being saved:</h2>
+  <ul>
+    <% devison.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="field">
+  <%= form.label :sec %>
+  <%= form.text_field :sec %>
+</div>
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
