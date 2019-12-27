@@ -17,6 +17,7 @@
 
     <div class="container-fluid">
         <div class="row">
+            <% if user_signed_in? %>
             <div class="col-md-2 col-sm-4 sidebar1">
                 <div class="logo">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQfmm6JSpN1WoxcL0_RsV4MPdM4ztj2k_ARt8WsdsvswCpskMWh" class="img-responsive center-block" alt="Logo">
@@ -25,9 +26,9 @@
                 <div class="left-navigation">
                     <ul class="list">
                         <h5><strong>WHEREABOUTS</strong></h5>
-                        <li>Home</li>
+                        <li><a href="/school">Home</li>
                       <li><a href="/members">Students</a></li>
-                        <li><a href="/school">School</a></li>
+                        <li>School</li>
                         <li>Gym</li>
                          <li><a href="/mystreams">Our Classes</a></li>
                         <li>Hike Club</li>
@@ -43,10 +44,11 @@
                         <li><a href="/vips">Our Guest</a></li>
                         <li>Sketching</li>
                         <li></li>
-                        <a href="/users/sign_out">Sign Out</a>
+                        <li><a href="/users/sign_out">Sign Out</a></li>
                     </ul>
                 </div>
             </div>
+            <%end%>
             <div class="col-md-10 col-sm-8 main-content">
              <% if notice %>
              <p class="alert alert-success"><%= notice %></p>
@@ -68,8 +70,8 @@
 }
 
   .sidebar1 {
-    background-position: fixed;
-    background: #F17153;
+    position: unset;
+     background: #F17153;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#F17153, #F58D63, #f1ab53);
     /* For Safari 5.1 to 6.0 */
@@ -77,7 +79,7 @@
     /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#F17153, #F58D63, #f1ab53);
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#4a0e0e, #fb29ba, #ef0606);
+    background: linear-gradient(#F17153, #F58D63, #f1ab53);
     /* Standard syntax */
     padding: 0px;
     min-height: 100%;
