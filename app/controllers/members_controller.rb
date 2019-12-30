@@ -6,11 +6,14 @@ class MembersController < ApplicationController
   def index
     @members = Member.all
   end
-
   # GET /members/1
   # GET /members/1.json
   def show
   end
+def xyz
+end
+def date
+end
 
   # GET /members/new
   def new
